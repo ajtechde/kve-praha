@@ -43,7 +43,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="font-serif text-xl font-bold tracking-wide text-primary flex items-center gap-1.5 group">
-          KVE – Praha
+          {lang === "ru" ? "ХВЕ – Прага" : "KVE – Praha"}
           <span className="text-xs text-foreground/40 font-sans font-normal group-hover:text-accent transition-colors">↗</span>
         </Link>
 
