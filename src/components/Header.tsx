@@ -42,8 +42,9 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-serif text-xl font-bold tracking-wide text-primary">
+        <Link to="/" className="font-serif text-xl font-bold tracking-wide text-primary flex items-center gap-1.5 group">
           KVE – Praha
+          <span className="text-xs text-foreground/40 font-sans font-normal group-hover:text-accent transition-colors">↗</span>
         </Link>
 
         {/* Desktop nav */}
@@ -53,7 +54,7 @@ export default function Header() {
               key={l.to}
               to={l.to}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-accent",
+                "text-base font-medium transition-colors hover:text-accent",
                 location.pathname === l.to ? "text-accent" : "text-foreground/80"
               )}
             >
@@ -64,7 +65,7 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 text-sm text-foreground/70 hover:text-accent transition-colors"
+              className="flex items-center gap-1 text-base text-foreground/70 hover:text-accent transition-colors"
               aria-label="Change language"
             >
               <Globe className="w-4 h-4" />
