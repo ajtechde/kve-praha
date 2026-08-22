@@ -1,12 +1,38 @@
-import { Book, Heart, Users, Music, Sprout } from "lucide-react";
+import { Heart, Users, Music, Sprout } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 
+function BibleIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {/* Book body */}
+      <rect x="8" y="6" width="44" height="52" rx="5" ry="5" />
+      {/* Spine line */}
+      <line x1="16" y1="6" x2="16" y2="58" />
+      {/* Cross — vertical */}
+      <line x1="36" y1="20" x2="36" y2="38" />
+      {/* Cross — horizontal */}
+      <line x1="28" y1="26" x2="44" y2="26" />
+      {/* Decorative lines below cross */}
+      <line x1="26" y1="44" x2="46" y2="44" />
+      <line x1="29" y1="49" x2="43" y2="49" />
+    </svg>
+  );
+}
+
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Book, Heart, Users, Music, Sprout,
+  Book: BibleIcon, Heart, Users, Music, Sprout,
 };
 
 const fadeUp = {
@@ -63,8 +89,8 @@ export default function About() {
                 >
                   <Card className="h-full text-center hover:shadow-md transition-shadow">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-accent" />
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-accent" />
                       </div>
                       <h3 className="font-serif text-lg font-semibold mb-2">{t(card.title)}</h3>
                       <p className="text-sm text-muted-foreground">{t(card.text)}</p>
