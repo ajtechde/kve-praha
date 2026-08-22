@@ -82,7 +82,7 @@ const beliefIcons = [
 ];
 
 export default function Beliefs() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
   return (
     <Layout
@@ -117,25 +117,6 @@ export default function Beliefs() {
                 </p>
               ))}
             </div>
-          </motion.div>
-
-          {/* Icon row */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 grid grid-cols-3 sm:grid-cols-6 gap-6"
-          >
-            {beliefIcons.map((item) => (
-              <div key={item.label.en} className="flex flex-col items-center gap-2 group">
-                <div className="w-14 h-14 flex items-center justify-center text-foreground/40 group-hover:text-accent transition-colors duration-300">
-                  {item.svg}
-                </div>
-                <span className="text-xs text-muted-foreground text-center leading-tight">
-                  {item.label[lang]}
-                </span>
-              </div>
-            ))}
           </motion.div>
 
           {/* Questions CTA */}
