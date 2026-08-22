@@ -27,7 +27,6 @@ export default function Header() {
   const links = [
     { to: "/", label: t(translations.nav.home) },
     { to: "/about", label: t(translations.nav.about) },
-    { to: "/beliefs", label: t(translations.nav.beliefs) },
     { to: "/locations", label: t(translations.nav.locations) },
     { to: "/contact", label: t(translations.nav.contact) },
   ];
